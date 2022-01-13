@@ -2,9 +2,9 @@
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                      Title="MoonyTool"
-                      Height="400"
-                      Width="800"                    
+                      Title="Tool"
+                      Height="200"
+                      Width="200"                    
                       WindowStartupLocation="CenterScreen"
                       xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
                       Dialog:DialogParticipation.Register="{Binding}" Closing="MetroWindow_Closing">
@@ -26,39 +26,11 @@
     </Controls:MetroWindow.Flyouts>
 
     <Grid>
-        <TabControl VerticalAlignment="Top">
-            <TabItem Header="Edit">
+        <TabControl VerticalAlignment="Top" Height="160">
+            <TabItem Header="Main">
                 <Grid Background="White">
-                    <DataGrid CanUserSortColumns="False" AlternationCount="500" AddingNewItem="mDataGrid_AddingNewItem" Name="mDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" LoadingRow="mDataGrid_LoadingRow" 
-                          SelectionUnit="Cell" SelectionMode="Single" IsReadOnly="False" Height="320" VerticalAlignment="Center" HorizontalAlignment="Center"
-                              MouseDoubleClick="mDataGrid_MouseDoubleClick">
-                        <DataGrid.Columns>
-
-                            <DataGridTextColumn IsReadOnly="True" Header="#" Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=(ItemsControl.AlternationIndex)}"/>
-                            <DataGridCheckBoxColumn Header="Enable" Binding="{Binding Path=mTable_IsEnable}"/>
-                            <DataGridComboBoxColumn Header="Mode" x:Name="mComboBoxColumn" SelectedItemBinding="{Binding Path=mTable_Mode}" MinWidth="100"/>
-                            <DataGridTextColumn Header="Action" Binding="{Binding Path=mTable_Action}" MinWidth="250"/>
-                            <DataGridTextColumn Header="Time" Binding="{Binding Path=mTable_Time}"/>
-                            <DataGridTemplateColumn Header=" ">
-                                <DataGridTemplateColumn.CellTemplate >
-                                    <DataTemplate>
-                                        <Image  Height="16" Width="16" Source="trash.png"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="+">
-                                <DataGridTemplateColumn.CellTemplate >
-                                    <DataTemplate>
-                                        <Image  Height="16" Width="16" Source="plus.png"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                        </DataGrid.Columns>
-
-                    </DataGrid>
-
-                    <Button Click="Btn_open_Click" Content="Open" MinWidth="25" Width="50" Height="17" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0" />
+                    <Button Click="Btn_Decode_Click" Content="Decode" MinWidth="25" Width="70" Height="17" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0" />
+                    <Button Click="Btn_Encode_Click" Content="Encode" MinWidth="25" Width="70" Height="17" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,80,0" />
                 </Grid>
             </TabItem>
         </TabControl>
