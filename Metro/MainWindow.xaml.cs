@@ -44,9 +44,9 @@ namespace Metro
                 //Read the contents of the file into a stream
                 StreamReader reader = new StreamReader(filePath);
 
-                // read test
+                // read text
                 fileContent = reader.ReadToEnd();
-
+                TextInput.Text = fileContent;
 
                 string textToEncrypt = fileContent;
                 string ToReturn = "";
@@ -71,6 +71,7 @@ namespace Metro
                     cs.FlushFinalBlock();
                     ToReturn = Convert.ToBase64String(ms.ToArray());
                 }
+                TextOutput.Text= ToReturn;
                 System.IO.File.WriteAllText(filePath+ ".Encode", ToReturn);
 
 
@@ -103,8 +104,9 @@ namespace Metro
                 //Read the contents of the file into a stream
                 StreamReader reader = new StreamReader(filePath);
 
-                // read test
+                // read text
                 fileContent = reader.ReadToEnd();
+                TextInput.Text = fileContent;
 
                 string textToDecrypt = fileContent;
                 string ToReturn = "";
@@ -130,6 +132,7 @@ namespace Metro
                     Encoding encoding = Encoding.UTF8;
                     ToReturn = encoding.GetString(ms.ToArray());
                 }
+                TextOutput.Text = ToReturn;
                 System.IO.File.WriteAllText(filePath + ".Decode", ToReturn);
 
 
