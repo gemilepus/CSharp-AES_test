@@ -26,19 +26,16 @@
     </Controls:MetroWindow.Flyouts>
 
     <Grid>
-        <TabControl VerticalAlignment="Top" Height="250">
+        <TabControl VerticalAlignment="Top" Height="260">
             <TabItem Header="Main">
                 <Grid Background="White">
-                    <TextBox x:Name="TextInput" Height="80" Margin="20,0,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TextOutput" Height="80" Margin="20,90,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-
+                    <TextBox x:Name="TextInput" Height="80" Margin="10,0,10,0" TextWrapping="Wrap" Text="Input" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TextOutput" Height="80" Margin="10,100,10,0" TextWrapping="Wrap" Text="Output" VerticalAlignment="Top"/>
                     <Button Click="Btn_Decode_Click" Content="Decode" MinWidth="25" Width="70" Height="17" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,0" />
                     <Button Click="Btn_Encode_Click" Content="Encode" MinWidth="25" Width="70" Height="17" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,80,0" />
                 </Grid>
             </TabItem>
         </TabControl>
-
     </Grid>
 
 </Controls:MetroWindow>
-
